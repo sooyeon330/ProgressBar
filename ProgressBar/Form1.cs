@@ -35,6 +35,11 @@ namespace ProgressBar
             if(this.Num > 100)
             {
                 this.Timer.Enabled = false;
+                MessageBox.Show("진행완료", "알림",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Num = 0;
+                this.pbStatus.Value = Num;
+                this.lblStatus.Text = OrgStr;
                 return;
             }
             this.pbStatus.Value = Num;
